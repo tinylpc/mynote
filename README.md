@@ -199,3 +199,11 @@ protected LayoutParams generateDefaultLayoutParams() {
 因为view的LayoutParams为null，这时会创建默认的LayoutParams，都是WRAP_CONTENT，所以无论怎么修改TextView的宽高属性都不会生效
 
 ### 第二种方式
+```
+setContentView(R.layout.activity_main);
+LinearLayout ll = (LinearLayout)findViewById(R.id.activity_main);
+View view = LayoutInflater.from(this).inflate(R.layout.text_test,ll,true);
+```
+
+### 效果图
+![]()
