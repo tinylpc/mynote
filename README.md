@@ -178,7 +178,7 @@ ll.addView(view);
 
 ### 效果图
 
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1720072-119abf160b2783b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://github.com/tinylpc/mynote/blob/master/%E6%95%88%E6%9E%9C1.png)
 
 TextView设置的宽高完全没效果，为什么呢，开始分析源码。
 因为传入的root值为null,所以attachToRoot为false，见第2行源码。然后会执行到第58行，通过createViewFromTag获取一个view实例，这个实例的LayoutParams为null，再看第94行，这个view会作为最终结果返回。下面就是LinearLayout的addView方法。
@@ -197,3 +197,5 @@ protected LayoutParams generateDefaultLayoutParams() {
 }
 ```
 因为view的LayoutParams为null，这时会创建默认的LayoutParams，都是WRAP_CONTENT，所以无论怎么修改TextView的宽高属性都不会生效
+
+### 第二种方式
