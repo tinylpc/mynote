@@ -206,4 +206,19 @@ View view = LayoutInflater.from(this).inflate(R.layout.text_test,ll,true);
 ```
 
 ### 效果图
-![]()
+![](https://github.com/tinylpc/mynote/blob/master/%E6%95%88%E6%9E%9C23.png)
+
+这种方式使用的就是TextView的宽高，第68行代码，会获取到TextView的宽和高的LayoutParams，87行会将view添加到root里面
+
+### 第三种方式
+```
+setContentView(R.layout.activity_main);
+LinearLayout ll = (LinearLayout)findViewById(R.id.activity_main);
+View view = LayoutInflater.from(this).inflate(R.layout.text_test,ll,false);
+ll.addView(view);
+```
+
+### 效果图
+![](https://github.com/tinylpc/mynote/blob/master/%E6%95%88%E6%9E%9C23.png)
+
+这种方式使用的也是TextView的宽高，第68行代码，会获取到TextView的宽和高的LayoutParams，72行设置layoutParams，94行赋值，最终返回。
